@@ -1,6 +1,6 @@
-import {createSlise} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 import {UsersList} from './../DATA/Data'
-const UsersSlise = createSlise({
+const UsersSlise = createSlice({
     name:'users',
     initialState:UsersList,
     reducers:{
