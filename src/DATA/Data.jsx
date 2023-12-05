@@ -5,8 +5,8 @@ export const UsersList =[
         id :1
     },
     {
-        name : 'amin amin',
-        email :'aminamin@gmail.com',
+        name : 'rida amin',
+        email :'ridaamrani@gmail.com',
         id :2
     },
     {

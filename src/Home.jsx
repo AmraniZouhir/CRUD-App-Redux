@@ -1,12 +1,19 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import { delateUsers } from './UsersReducers/UsersReducers';
 
 
 export default function Home() {
     const users = useSelector((state) => state.users);
-    console.log(users)
+    // console.log(users)
+    const dispatche = useDispatch()
+
+    const handelDelate =(id)=>{
+        alert(`User ${id} Deleted`);
+        dispatche(delateUsers({id:id}))
+    }
     return (
         <div className='container mt-5'>
             <h2>Crud App With JSON Server </h2>
@@ -27,8 +34,8 @@ export default function Home() {
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>
-                                <button className='btn btn-sm btn-primary' style={{ marginRight: '5px' }}>Edit</button>
-                                <button className='btn btn-sm btn-danger'>Delete</button>
+                                <Link to={`/edite/${user.id}`} className='btn btn-sm btn-primary' style={{ marginRight: '5px' }}>Edit</Link>
+                                <button onClick={()=>handelDelate(user.id)} className='btn btn-sm btn-danger'>Delete</button>
                             </td>
 
                         </tr>
