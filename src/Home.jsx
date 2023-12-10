@@ -10,9 +10,9 @@ export default function Home() {
     // console.log(users)
     const dispatche = useDispatch()
 
-    const handelDelate =(id)=>{
+    const handelDelate = (id) => {
         alert(`User ${id} Deleted`);
-        dispatche(delateUsers({id:id}))
+        dispatche(delateUsers({ id: id }))
     }
     return (
         <div className='container mt-5'>
@@ -35,7 +35,7 @@ export default function Home() {
                             <td>{user.email}</td>
                             <td>
                                 <Link to={`/edite/${user.id}`} className='btn btn-sm btn-primary' style={{ marginRight: '5px' }}>Edit</Link>
-                                <button onClick={()=>handelDelate(user.id)} className='btn btn-sm btn-danger'>Delete</button>
+                                <button onClick={() => handelDelate(user.id)} className='btn btn-sm btn-danger'>Delete</button>
                             </td>
 
                         </tr>
